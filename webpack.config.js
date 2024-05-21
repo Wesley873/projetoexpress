@@ -5,7 +5,7 @@ export default {
     entry: './src/js/index.js',
     output: {
         filename: 'index.js',
-        path: path.resolve('(root)'),
+        path: path.resolve('docs'),
     },
     module:
     {
