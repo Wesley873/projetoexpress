@@ -5,17 +5,23 @@
 
 @keyframes slide-in {
     0% {
-        transform: translateX(20%);
+        transform: translateX(-20%);
     }
 
     100% {
-        transform: translateX(40%);
+        transform: translateX(20%);
     }
 }
 
 h1{
+    text-align: center;
     color: red;
 }
+div{
+    text-align: center;
+    color: green;
+}
 p {
+    text-align: center;
     color: blue;
 }
