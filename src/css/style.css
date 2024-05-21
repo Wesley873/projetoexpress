@@ -1,0 +1,21 @@
+ /* CSS for the animated item */
+ .animated-item {
+    animation: slide-in 2s ease-in-out infinite alternate;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(20%);
+    }
+
+    100% {
+        transform: translateX(40%);
+    }
+}
+
+h1{
+    color: red;
+}
+p{
+    color: blue;
+}
