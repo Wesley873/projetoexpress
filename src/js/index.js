@@ -10,7 +10,7 @@ function adicionaTexto() {
 function adicionaLink() {
   const link = document.createElement('a');
   link.textContent = 'Pagina 2';
-  link.href = '/build/pagina2.html';
+  link.href = '/pagina2.html';
   document.body.appendChild(link);
 };
 adicionaLink();
