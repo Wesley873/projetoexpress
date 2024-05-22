@@ -11,7 +11,14 @@ export default {
     {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.html$/,
+                use: ['html-loader']
+            }, {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.css$/i,
                 use: ['style-loader', 'css-loader']
             }
         ]

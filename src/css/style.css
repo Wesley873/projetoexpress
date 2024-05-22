@@ -1,27 +1,29 @@
- /* CSS for the animated item */
- .animated-item {
-    animation: slide-in 2s ease-in-out infinite alternate;
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+:root {
+    --fundo-escuro: #151616;
+    --fundo-medio: #545454;
+    --fundo-claro: #777777;
+    --texto-claro: #f3f3f3;
 }
 
-@keyframes slide-in {
-    0% {
-        transform: translateX(-20%);
-    }
-
-    100% {
-        transform: translateX(20%);
-    }
+.icons {
+    width: 30px;
+    height: 30px;
 }
 
-h1{
-    text-align: center;
-    color: red;
+.logo {
+    width: 40px;
+    height: 40px;
 }
-div{
-    text-align: center;
-    color: green;
+
+.card {
+    width: 18rem;
 }
-p {
-    text-align: center;
-    color: blue;
+.corpo-da-pagina {
+    margin: 12vh 0 12vh 0;
+}
+
+.col{
+    margin: 20px 0 20px 0;
 }
