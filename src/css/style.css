@@ -7,6 +7,10 @@
     --texto-claro: #f3f3f3;
 }
 
+.root{
+    background-color: #cfceec;
+}
+
 .icons {
     width: 30px;
     height: 30px;
@@ -18,11 +22,13 @@
 }
 
 .card {
-    width: 18rem;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
 }
 .corpo-da-pagina {
-    margin: 12vh 0 12vh 0;
-    background-color: #999999;
+    margin: 10vh 0 10vh 0;
+    
 }
 
 .col{

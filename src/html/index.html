@@ -7,13 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xburguer Gamer</title>
 </head>
+<script>
+    import imprimeNoConsole from ''
+    function preencheModal(nome, id) {
+        document.querySelector('#primeiro-modal').innerHTML = `Deseja adicionar<strong> ${nome} </strong>ao seu pedido?`;
+        document.querySelector('#adicionar').setAttribute('onclick', `adicionaPedido(${id})`);
+        document.querySelector('#segundo-modal').innerHTML = `<strong> ${nome} </strong> adicionado ao pedido com sucesso!`;
+    }
+    function adicionaPedido(id) {
+        if (!localStorage.getItem('pedido')) localStorage.setItem('pedido', '[]');
+        const pedido = JSON.parse(localStorage.getItem('pedido'));
+        pedido.push(id);
+        localStorage.setItem('pedido', JSON.stringify(pedido));
+    }
+</script>
 
 <body class="root">
     <!-- Barra Superior -->
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="logo" src="../images/logo-oficial.png" alt="Icone search">X
-                Burguer Gamer</a>
+            <a class="navbar-brand" href="#"><img class="logo" src="../images/logo-oficial-90x90.png"
+                    alt="Icone search">X-Burguer Gamer</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -36,32 +50,50 @@
                             <a class="nav-link active" aria-current="page" href="#">Histórico de pedidos</a>
                             <a class="nav-link active" aria-current="page" href="#">Configurações</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li> -->
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li> -->
                     </ul>
-                    <!-- <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit">Search</button>
-                    </form> -->
                 </div>
             </div>
         </div>
     </nav>
+    <!-- Modal de confirmação -->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Confirmar pedido</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="primeiro-modal">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                        id="adicionar">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Sucesso</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="segundo-modal">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                    <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">OK</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
 
     <!-- Corpo da pagina -->
     <div class="container-fluid corpo-da-pagina">
@@ -69,61 +101,65 @@
             <div class="card">
                 <img src="../images/xburguergamer.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">X Burguer Gamer</h5>
+                    <h5 class="card-title">X-Burguer Gamer</h5>
                     <p class="card-text">Composto por um suculento pão com gergelim, abriga dois deliciosos
-                        hambúrgueres de fraldinha (130g cada), que prometem uma explosão de sabor. O toque crocante
-                        é dado pelo bacon</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao pedido</a>
+                        hambúrgueres de fraldinha (130g cada)</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalToggle" onclick="preencheModal('X Burguer Gamer', 1)">
+                        Adicionar ao pedido
+                    </button>
                 </div>
             </div>
             <div class="card">
-                <img src="../images/xburguergamer.png" class="card-img-top" alt="...">
+                <img src="../images/xdoggamertradicional.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">X Burguer Gamer</h5>
-                    <p class="card-text">Composto por um suculento pão com gergelim, abriga dois deliciosos
-                        hambúrgueres de fraldinha (130g cada), que prometem uma explosão de sabor. O toque crocante
-                        é dado pelo bacon</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao pedido</a>
+                    <h5 class="card-title">X-Dog Gamer Tradicional</h5>
+                    <p class="card-text">Pão tradicional l, 01 salsicha, ketchup, mostarda, batata palha, purê de batata
+                        e alface.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('X-Dog Gamer Tradicional', 2)">
+                        Adicionar ao pedido
+                    </button>
+                </div>
+
+            </div>
+            <div class="card">
+                <img src="../images/xsupermetroidbacon.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">X-SUPER METROID BACON</h5>
+                    <p class="card-text">O 'X - Super Metroid Bacon' é um burguer irresistível da nossa 'Linha Tradicional Mais Pedida'</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('X-SUPER METROID BACON', 3)">
+                        Adicionar ao pedido
+                    </button>
                 </div>
             </div>
             <div class="card">
-                <img src="../images/xburguergamer.png" class="card-img-top" alt="...">
+                <img src="../images/xburguergamerespecial.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">X Burguer Gamer</h5>
-                    <p class="card-text">Composto por um suculento pão com gergelim, abriga dois deliciosos
-                        hambúrgueres de fraldinha (130g cada), que prometem uma explosão de sabor. O toque crocante
-                        é dado pelo bacon</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao pedido</a>
+                    <h5 class="card-title">X-BURGUER GAMER ESPECIAL</h5>
+                    <p class="card-text">Apresentamos nosso X-Burguer Gamer Especial, da nossa linha premium queridinha.</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('X-BURGUER GAMER ESPECIAL', 4)">
+                            Adicionar ao pedido
+                        </button>
                 </div>
             </div>
             <div class="card">
-                <img src="../images/xburguergamer.png" class="card-img-top" alt="...">
+                <img src="../images/supermarioburguer.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">X Burguer Gamer</h5>
-                    <p class="card-text">Composto por um suculento pão com gergelim, abriga dois deliciosos
-                        hambúrgueres de fraldinha (130g cada), que prometem uma explosão de sabor. O toque crocante
-                        é dado pelo bacon</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao pedido</a>
+                    <h5 class="card-title">SUPER MÁRIO BURGUER</h5>
+                    <p class="card-text">'Super Mário Burguer', destaque de nossa 'Linha Premium Queridinha'. Este saboroso hambúrguer é feito com o irresistível pão australiano, complementado por duas generosas porções de hambúrguer de carne de fraldinha</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('SUPER MÁRIO BURGUER', 5)">
+                            Adicionar ao pedido
+                        </button>
                 </div>
             </div>
             <div class="card">
-                <img src="../images/xburguergamer.png" class="card-img-top" alt="...">
+                <img src="../images/tetrislinguiça.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">X Burguer Gamer</h5>
-                    <p class="card-text">Composto por um suculento pão com gergelim, abriga dois deliciosos
-                        hambúrgueres de fraldinha (130g cada), que prometem uma explosão de sabor. O toque crocante
-                        é dado pelo bacon</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao pedido</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/xburguergamer.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">X Burguer Gamer</h5>
-                    <p class="card-text">Composto por um suculento pão com gergelim, abriga dois deliciosos
-                        hambúrgueres de fraldinha (130g cada), que prometem uma explosão de sabor. O toque crocante
-                        é dado pelo bacon</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao pedido</a>
+                    <h5 class="card-title">Tetris Linguiça</h5>
+                    <p class="card-text">Apresentamos o 'Tetris Linguiça', da nossa Linha Premium Queridinha. Este é um suculento burger, elaborado com um pão tradicional macio e fresco, abrigando um generoso hambúrguer de linguiça de 150g</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('Tetris Linguiça', 6)">
+                        Adicionar ao pedido
+                    </button>
                 </div>
             </div>
         </div>
@@ -141,10 +177,9 @@
                 src="../icons/search.png" alt="Icone search">Buscar</div>
         <div class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
                 src="../icons/sell.png" alt="Icone sell">Ofertas</div>
-        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
-                src="../icons/order.png" alt="Icone order">Pedido</div>
+        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><a href="/pedido.html" class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
+                src="../icons/order.png" alt="Icone order">Pedido</a></div>
     </div>
-</body>
 </body>
 
 </html>

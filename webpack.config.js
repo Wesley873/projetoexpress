@@ -29,8 +29,8 @@ export default {
             filename: 'index.html',
         }),
         new HtmlWebpackPlugin({
-            template: './src/html/pagina2.html',
-            filename: 'pagina2.html',
+            template: './src/html/pedido.html',
+            filename: 'pedido.html',
         })
     ],
 };
