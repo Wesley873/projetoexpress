@@ -13,6 +13,10 @@
         document.querySelector('#primeiro-modal').innerHTML = `Deseja adicionar<strong> ${nome} </strong>ao seu pedido?`;
         document.querySelector('#adicionar').setAttribute('onclick', `adicionaPedido(${id})`);
         document.querySelector('#segundo-modal').innerHTML = `<strong> ${nome} </strong> adicionado ao pedido com sucesso!`;
+        const url = window.location.href;
+        document.querySelector('#pedido').setAttribute('href', url.replace('index.html', 'pedido.html'));
+
+        
     }
     function adicionaPedido(id) {
         if (!localStorage.getItem('pedido')) localStorage.setItem('pedido', '[]');
@@ -177,7 +181,7 @@
                 src="efe06614ffbbef4b04f5.png" alt="Icone search">Buscar</div>
         <div class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
                 src="064a582a155f07614f8f.png" alt="Icone sell">Ofertas</div>
-        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><a href="/pedido.html" class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
+        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><a id="pedido" class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
                 src="452ab8aa0f9006c17845.png" alt="Icone order">Pedido</a></div>
     </div>
 </body>
