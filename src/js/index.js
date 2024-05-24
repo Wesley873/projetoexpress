@@ -5,7 +5,10 @@ import listaItens from './listaItens.js';
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM completamente carregado e analisado');
+    const url = window.location.href + 'pedido.html';
+    document.querySelector('#pedido').setAttribute('href', url);
+    alert(url);
+    console.log(window.location.href);
 });
 
 document.querySelector('#bota').addEventListener('click', (e) => {

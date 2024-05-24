@@ -8,13 +8,13 @@
     <title>Xburguer Gamer</title>
 <script defer src="index.js"></script></head>
 <script>
-    import imprimeNoConsole from ''
+    
+    
+
     function preencheModal(nome, id) {
         document.querySelector('#primeiro-modal').innerHTML = `Deseja adicionar<strong> ${nome} </strong>ao seu pedido?`;
         document.querySelector('#adicionar').setAttribute('onclick', `adicionaPedido(${id})`);
         document.querySelector('#segundo-modal').innerHTML = `<strong> ${nome} </strong> adicionado ao pedido com sucesso!`;
-        const url = window.location.href;
-        document.querySelector('#pedido').setAttribute('href', url.replace('index.html', 'pedido.html'));
 
         
     }
