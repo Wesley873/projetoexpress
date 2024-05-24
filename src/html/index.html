@@ -15,8 +15,6 @@
         document.querySelector('#primeiro-modal').innerHTML = `Deseja adicionar<strong> ${nome} </strong>ao seu pedido?`;
         document.querySelector('#adicionar').setAttribute('onclick', `adicionaPedido(${id})`);
         document.querySelector('#segundo-modal').innerHTML = `<strong> ${nome} </strong> adicionado ao pedido com sucesso!`;
-
-
     }
     function adicionaPedido(id) {
         if (!localStorage.getItem('pedido')) localStorage.setItem('pedido', '[]');
@@ -30,8 +28,9 @@
     <!-- Barra Superior -->
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="logo" src="../images/logo-oficial-90x90.png"
-                    alt="Icone search">X-Burguer Gamer</a>
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="../images/logo-oficial-90x90.png" alt="Icone search">X-Burguer Gamer
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -46,13 +45,14 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
+                
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Meus Dados</a>
-                            <a class="nav-link active" aria-current="page" href="#">Forma de pagamento</a>
-                            <a class="nav-link active" aria-current="page" href="#">Histórico de pedidos</a>
-                            <a class="nav-link active" aria-current="page" href="#">Configurações</a>
+                            <a id="meusdados" class="nav-link active" aria-current="page" href="#">Meus Dados</a>
+                            <a id="formasdepagamento" class="nav-link active" aria-current="page" href="#">Forma de pagamento</a>
+                            <a id="historico" class="nav-link active" aria-current="page" href="#">Histórico de pedidos</a>
+                            <a id="configuracoes" class="nav-link active" aria-current="page" href="#">Configurações</a>
                         </li>
                     </ul>
                 </div>
@@ -189,10 +189,13 @@
             <a href="/" class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
                     src="../icons/home.png" alt="Icone home"> Inicio</a>
         </div>
-        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
-                src="../icons/search.png" alt="Icone search">Buscar</div>
         <div class="d-flex flex-column align-items-center text-decoration-none text-white">
-            <a id="ofertas" class="d-flex flex-column align-items-center text-decoration-none text-white"></a>
+            <a id="buscar" class="d-flex flex-column align-items-center text-decoration-none text-white">
+                <img class="icons" src="../icons/search.png" alt="Icone search">Buscar
+            </a>
+        </div>
+        <div class="d-flex flex-column align-items-center text-decoration-none text-white">
+            <a id="ofertas" class="d-flex flex-column align-items-center text-decoration-none text-white">
                 <img class="icons" src="../icons/sell.png" alt="Icone sell">Ofertas
             </a>
         </div>

@@ -31,6 +31,30 @@ export default {
         new HtmlWebpackPlugin({
             template: './src/html/pedido.html',
             filename: 'pedido.html',
-        })
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/ofertas.html',
+            filename: 'ofertas.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/buscar.html',
+            filename: 'buscar.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/meusdados.html',
+            filename: 'meusdados.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/formasdepagamento.html',
+            filename: 'formasdepagamento.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/historico.html',
+            filename: 'historico.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/configuracoes.html',
+            filename: 'configuracoes.html',
+        }),
     ],
 };
