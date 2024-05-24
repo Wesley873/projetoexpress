@@ -8,15 +8,15 @@
     <title>Xburguer Gamer</title>
 <script defer src="index.js"></script></head>
 <script>
-    
-    
+
+
 
     function preencheModal(nome, id) {
         document.querySelector('#primeiro-modal').innerHTML = `Deseja adicionar<strong> ${nome} </strong>ao seu pedido?`;
         document.querySelector('#adicionar').setAttribute('onclick', `adicionaPedido(${id})`);
         document.querySelector('#segundo-modal').innerHTML = `<strong> ${nome} </strong> adicionado ao pedido com sucesso!`;
 
-        
+
     }
     function adicionaPedido(id) {
         if (!localStorage.getItem('pedido')) localStorage.setItem('pedido', '[]');
@@ -97,7 +97,8 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first
+        modal</button>
 
     <!-- Corpo da pagina -->
     <div class="container-fluid corpo-da-pagina">
@@ -120,7 +121,8 @@
                     <h5 class="card-title">X-Dog Gamer Tradicional</h5>
                     <p class="card-text">Pão tradicional l, 01 salsicha, ketchup, mostarda, batata palha, purê de batata
                         e alface.</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('X-Dog Gamer Tradicional', 2)">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalToggle" onclick="preencheModal('X-Dog Gamer Tradicional', 2)">
                         Adicionar ao pedido
                     </button>
                 </div>
@@ -130,8 +132,10 @@
                 <img src="fc8cba59d86830657c0f.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">X-SUPER METROID BACON</h5>
-                    <p class="card-text">O 'X - Super Metroid Bacon' é um burguer irresistível da nossa 'Linha Tradicional Mais Pedida'</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('X-SUPER METROID BACON', 3)">
+                    <p class="card-text">O 'X - Super Metroid Bacon' é um burguer irresistível da nossa 'Linha
+                        Tradicional Mais Pedida'</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalToggle" onclick="preencheModal('X-SUPER METROID BACON', 3)">
                         Adicionar ao pedido
                     </button>
                 </div>
@@ -140,28 +144,36 @@
                 <img src="8618e9114e0f3c1b92ff.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">X-BURGUER GAMER ESPECIAL</h5>
-                    <p class="card-text">Apresentamos nosso X-Burguer Gamer Especial, da nossa linha premium queridinha.</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('X-BURGUER GAMER ESPECIAL', 4)">
-                            Adicionar ao pedido
-                        </button>
+                    <p class="card-text">Apresentamos nosso X-Burguer Gamer Especial, da nossa linha premium queridinha.
+                    </p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalToggle" onclick="preencheModal('X-BURGUER GAMER ESPECIAL', 4)">
+                        Adicionar ao pedido
+                    </button>
                 </div>
             </div>
             <div class="card">
                 <img src="7e4c4f0de266a0e97bce.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">SUPER MÁRIO BURGUER</h5>
-                    <p class="card-text">'Super Mário Burguer', destaque de nossa 'Linha Premium Queridinha'. Este saboroso hambúrguer é feito com o irresistível pão australiano, complementado por duas generosas porções de hambúrguer de carne de fraldinha</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('SUPER MÁRIO BURGUER', 5)">
-                            Adicionar ao pedido
-                        </button>
+                    <p class="card-text">'Super Mário Burguer', destaque de nossa 'Linha Premium Queridinha'. Este
+                        saboroso hambúrguer é feito com o irresistível pão australiano, complementado por duas generosas
+                        porções de hambúrguer de carne de fraldinha</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalToggle" onclick="preencheModal('SUPER MÁRIO BURGUER', 5)">
+                        Adicionar ao pedido
+                    </button>
                 </div>
             </div>
             <div class="card">
                 <img src="ac9a88b5d70b11feddf0.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Tetris Linguiça</h5>
-                    <p class="card-text">Apresentamos o 'Tetris Linguiça', da nossa Linha Premium Queridinha. Este é um suculento burger, elaborado com um pão tradicional macio e fresco, abrigando um generoso hambúrguer de linguiça de 150g</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" onclick="preencheModal('Tetris Linguiça', 6)">
+                    <p class="card-text">Apresentamos o 'Tetris Linguiça', da nossa Linha Premium Queridinha. Este é um
+                        suculento burger, elaborado com um pão tradicional macio e fresco, abrigando um generoso
+                        hambúrguer de linguiça de 150g</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalToggle" onclick="preencheModal('Tetris Linguiça', 6)">
                         Adicionar ao pedido
                     </button>
                 </div>
@@ -179,10 +191,16 @@
         </div>
         <div class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
                 src="efe06614ffbbef4b04f5.png" alt="Icone search">Buscar</div>
-        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
-                src="064a582a155f07614f8f.png" alt="Icone sell">Ofertas</div>
-        <div class="d-flex flex-column align-items-center text-decoration-none text-white"><a id="pedido" class="d-flex flex-column align-items-center text-decoration-none text-white"><img class="icons"
-                src="452ab8aa0f9006c17845.png" alt="Icone order">Pedido</a></div>
+        <div class="d-flex flex-column align-items-center text-decoration-none text-white">
+            <a id="ofertas" class="d-flex flex-column align-items-center text-decoration-none text-white"></a>
+                <img class="icons" src="064a582a155f07614f8f.png" alt="Icone sell">Ofertas
+            </a>
+        </div>
+        <div class="d-flex flex-column align-items-center text-decoration-none text-white">
+            <a id="pedido" class="d-flex flex-column align-items-center text-decoration-none text-white">
+                <img class="icons" src="452ab8aa0f9006c17845.png" alt="Icone order">Pedido
+            </a>
+        </div>
     </div>
 </body>
 

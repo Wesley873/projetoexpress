@@ -5,10 +5,9 @@ import listaItens from './listaItens.js';
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const url = window.location.href + 'pedido.html';
-    document.querySelector('#pedido').setAttribute('href', url);
-    alert(url);
-    console.log(window.location.href);
+    document.querySelector('#pedido').setAttribute('href', window.location.href+'/pedido.html');
+    document.querySelector('#ofertas').setAttribute('href', window.location.href+'/ofertas.html');
+    document.querySelector('#buscar').setAttribute('href', window.location.href+'/buscar.html');
 });
 
 document.querySelector('#bota').addEventListener('click', (e) => {
